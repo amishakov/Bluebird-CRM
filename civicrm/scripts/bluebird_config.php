@@ -109,7 +109,7 @@ function get_bluebird_instance_config($instance = null, $filename = null)
   $envname = null;
 
   if ($instance == null) {
-    if (isset($_SERVER['HTTP_HOST'])) {
+    if (isset($_SERVER['HTTP_HOST']) && strlen($_SERVER['HTTP_HOST'])) {
       $instance = $_SERVER['HTTP_HOST'];
     }
     else if (($instance = getenv('INSTANCE_NAME')) === false) {
